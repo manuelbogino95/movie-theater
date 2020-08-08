@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Discover.module.css";
 import { getMoviesApi } from "../../api/api";
+import Search from "../../components/Search/Search";
 
 const Discover = () => {
   const [movies, setMovies] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     const getMovies = async () => {
-      const { results } = await getMoviesApi();
+      const { results } = await getMoviesApi(searchValue);
       setMovies(results);
     };
 
     getMovies();
-  }, []);
+  }, [searchValue]);
 
   const renderMovies = () => {
     return movies.map((movie) => (
@@ -30,6 +32,7 @@ const Discover = () => {
   return (
     <div>
       <h2 className={styles.title}>Discover</h2>
+      <Search setSearchValue={setSearchValue} />
       <div className={styles.movieListContainer}>
         {movies && renderMovies()}
       </div>
