@@ -1,0 +1,17 @@
+.messageContainer {
+  padding: 10px;
+  border-radius: 3px 3px 3px 3px;
+  margin: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.error {
+  color: #d8000c;
+  background-color: #ffbaba;
+}
+
+.info {
+  color: #059;
+  background-color: #bef;
+}
