@@ -1,0 +1,42 @@
+.movieListContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.title {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  margin-top: 0px;
+}
+
+.movieCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.movieImg {
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 600px) {
+  .movieCard {
+    width: calc(50% - 8px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .movieCard {
+    width: calc((100% / 3) - 12px);
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .movieCard {
+    width: calc((100% / 5) - 16px);
+  }
+}
