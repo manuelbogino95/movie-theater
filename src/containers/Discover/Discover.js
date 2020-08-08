@@ -6,6 +6,7 @@ import Search from "../../components/Search/Search";
 import Rating from "../../components/Rating/Rating";
 import Message from "../../components/Message/Message";
 import Loader from "../../components/Loader/Loader";
+import noImage from "../../assets/noImage.jpg";
 
 const Discover = () => {
   const [movies, setMovies] = useState([]);
@@ -36,7 +37,11 @@ const Discover = () => {
       return filteredMovies.map((movie) => (
         <div className={styles.movieCard} key={movie.id}>
           <img
-            src={`${process.env.REACT_APP_IMG_API_URL}${movie.poster_path}`}
+            src={
+              movie && movie.poster_path
+                ? `${process.env.REACT_APP_IMG_API_URL}${movie.poster_path}`
+                : noImage
+            }
             alt={movie.title}
             className={styles.movieImg}
           />
