@@ -5,19 +5,24 @@ import { filterMoviesHelper } from "../../helpers/moviesHelpers";
 import Search from "../../components/Search/Search";
 import Rating from "../../components/Rating/Rating";
 import Message from "../../components/Message/Message";
+import Loader from "../../components/Loader/Loader";
 
 const Discover = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [searchValue, setSearchValue] = useState("");
   const [rating, setRating] = useState();
 
   useEffect(() => {
     const getMovies = async () => {
       try {
+        setLoading(true);
         const { results } = await getMoviesApi(searchValue);
+        setLoading(false);
         setMovies(results);
       } catch (e) {
+        setLoading(false);
         setError(true);
       }
     };
@@ -51,6 +56,8 @@ const Discover = () => {
       <div className={styles.movieListContainer}>
         {error ? (
           <Message message="UPS! An error ocurred" type="error" />
+        ) : loading ? (
+          <Loader />
         ) : (
           movies && renderMovies()
         )}
