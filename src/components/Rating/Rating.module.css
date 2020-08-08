@@ -1,0 +1,11 @@
+.ratingContainer {
+  margin-bottom: 18px;
+}
+
+.ratingContainer:hover {
+  cursor: pointer;
+}
+
+.ratingContainer > span {
+  margin-right: 8px;
+}
