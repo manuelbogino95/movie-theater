@@ -25,12 +25,14 @@
 }
 
 .movieDetails > img {
+  z-index: 1;
   display: none;
 }
 
 .movieDescription {
   width: 80%;
   text-align: justify;
+  z-index: 1;
 }
 
 .title {
