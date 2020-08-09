@@ -8,6 +8,13 @@ const getOptions = (method) => ({
   },
 });
 
+const status = (res) => {
+  if (!res.ok) {
+    throw new Error(res.statusText);
+  }
+  return res;
+};
+
 const get = async (route, params) => {
   try {
     const query = Object.keys(params)
@@ -19,6 +26,7 @@ const get = async (route, params) => {
       getOptions("GET")
     );
 
+    status(response);
     const responseJson = await response.json();
 
     return responseJson;
@@ -40,4 +48,12 @@ export const getMoviesApi = (searchValue) => {
   } else {
     return get(constants.routes.discover, params);
   }
+};
+
+export const getMovieByIdApi = (movieId) => {
+  const params = {
+    api_key: process.env.REACT_APP_API_KEY,
+  };
+
+  return get(`${constants.routes.movie}/${movieId}`, params);
 };

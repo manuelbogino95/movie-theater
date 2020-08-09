@@ -31,6 +31,7 @@ const Rating = ({ setRatingHandler, rating }) => {
       stars.push(
         <FontAwesomeIcon
           key={i}
+          className={styles.star}
           icon={faStar}
           color={displayRating >= i + 1 ? "orange" : "black"}
           onClick={() => ratingChangedHandler(i + 1)}

@@ -1,3 +1,9 @@
+.discoverContainer {
+  width: 80%;
+  margin: auto;
+  padding-top: 40px;
+}
+
 .movieListContainer {
   display: flex;
   flex-wrap: wrap;
@@ -16,12 +22,28 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  border-radius: 10px;
+  box-shadow: 1px 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+.movieCard:hover {
+  cursor: pointer;
 }
 
 .movieImg {
   max-width: 100%;
   margin-bottom: 10px;
   height: 320px;
+}
+
+.movieInfo {
+  padding: 4px;
+  text-align: center;
+}
+
+.ratingStar {
+  margin-right: 4px;
 }
 
 @media only screen and (min-width: 600px) {

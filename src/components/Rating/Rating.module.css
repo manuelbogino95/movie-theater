@@ -1,5 +1,7 @@
 .ratingContainer {
   margin-bottom: 18px;
+  display: flex;
+  align-items: center;
 }
 
 .ratingContainer:hover {
@@ -8,4 +10,8 @@
 
 .ratingContainer > span {
   margin-right: 8px;
+}
+
+.star {
+  font-size: 25px;
 }

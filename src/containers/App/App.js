@@ -1,18 +1,17 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import styles from "./App.module.css";
 import Header from "../../components/Header/Header";
 import Discover from "../Discover/Discover";
+import MovieDetails from "../MovieDetails/MovieDetails";
 
 function App() {
   return (
     <div>
       <Header />
-      <div className={styles.main}>
-        <Switch>
-          <Route path="/" component={Discover} exact />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path="/" component={Discover} exact />
+        <Route path="/movie/:id" component={MovieDetails} exact />
+      </Switch>
     </div>
   );
 }
