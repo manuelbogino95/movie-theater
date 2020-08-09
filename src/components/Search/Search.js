@@ -22,7 +22,7 @@ const Search = ({ setSearchValue }) => {
       type="text"
       className={styles.searchInput}
       value={query}
-      placeholder="Search movies"
+      placeholder="Search Movies - Press Enter"
       onChange={(e) => valueChangedHandler(e)}
       onKeyPress={(e) => keyPressedHandler(e)}
     />
